@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-9312870448453345">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="...">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://btwv.masonbacotti.com/article-sig-017">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://btwv.masonbacotti.com/article-sig-017">
+  <meta property="og:title" content="Google's new AI can detect sarcasm and irony in text with 97% accuracy — Before They Went Viral">
+  <meta property="og:description" content="...">
+  <meta property="og:site_name" content="Before They Went Viral">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google's new AI can detect sarcasm and irony in text with 97% accuracy">
+  <meta name="twitter:description" content="...">
+  <title>Google's new AI can detect sarcasm and irony in text with 97% accuracy — Before They Went Viral</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f5f5;
+      --border: #e0e0e0;
+      --text: #1a1a1a;
+      --text-sec: #666666;
+      --accent: #ff6b35;
+      --green: #16a34a;
+      --yellow: #ca8a04;
+      --red: #dc2626;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo:hover { text-decoration: none; }
+    .logo-icon { color: var(--accent); font-size: 1.3rem; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: var(--text-sec); font-size: 0.9rem; }
+    nav a:hover { color: var(--text); text-decoration: none; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .genre-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .read-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-sec);
+    }
+    .signal-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .signal-pill.exploding { background: var(--red); color: #fff; }
+    .signal-pill.hot { background: var(--accent); color: #fff; }
+    .signal-pill.warming { background: var(--yellow); color: #fff; }
+    .signal-pill.cold { background: var(--text-sec); color: #fff; }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .subheadline {
+      font-size: 1.15rem;
+      color: var(--text-sec);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 40px 0 16px;
+    }
+
+    h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 28px 0 12px;
+    }
+
+    p { margin-bottom: 20px; }
+
+    ul, ol { margin: 0 0 20px 24px; }
+    li { margin-bottom: 8px; }
+
+    .key-stats {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .key-stats h3 { margin-top: 0; }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text-sec); }
+    .stat-value { font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
+
+    .ad-placeholder {
+      background: var(--surface);
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      color: var(--text-sec);
+      font-size: 0.85rem;
+      margin: 40px 0;
+    }
+
+    .why-box {
+      background: linear-gradient(135deg, #fff7f0, #fff);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 10px 10px 0;
+      margin: 32px 0;
+    }
+    .why-box h3 { margin-top: 0; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 32px;
+      color: var(--text-sec);
+      font-size: 0.9rem;
+    }
+    .back-link:hover { color: var(--text); text-decoration: none; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-sec);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--text-sec); }
+    footer a:hover { color: var(--text); }
+  
+    .related-signals { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 40px 0; }
+    .related-signals h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; margin: 0 0 16px; }
+    .related-list { list-style: none; margin: 0; padding: 0; }
+    .related-list li { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .related-list li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .related-list a { font-weight: 500; }
+    .related-list span { display: block; font-size: 0.8rem; color: var(--text-sec); margin-top: 2px; }
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://btwv.masonbacotti.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Signals", "item": "https://btwv.masonbacotti.com/"},
+      {"@type": "ListItem", "position": 3, "name": "Signal 017"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Google's new AI can detect sarcasm and irony in text with 97% accuracy",
+    "url": "https://btwv.masonbacotti.com/article-sig-017",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Before They Went Viral",
+      "url": "https://btwv.masonbacotti.com"
+    }
+  }
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+  <!-- Google Analytics - replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span>Before They Went Viral</span>
+    </a>
+    <nav>
+      <a href="index.html">Signals</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <a href="index.html" class="back-link">← Back to signals</a>
+
+  <div class="article-meta">
+    <span class="genre-badge">AI</span>
+    <span class="read-time">5 min read</span>
+    <span class="signal-pill hot">Signal 86/100</span>
+  </div>
+
+  <h1>Google's new AI can detect sarcasm and irony in text with 97% accuracy</h1>
+  <p class="subheadline">Google Research published a paper on a new model that detects sarcasm and irony better than humans. Already being integrated into Google Search results.</p>
+
+  <hr class="article-divider">
+
+  <div class="why-box">
+    <h3>Why this will go viral</h3>
+    <p>Sarcasm and irony have always been the Achilles' heel of AI language understanding — the classic "they didn't mean what they said" problem that trips up every chatbot and assistant. Google Research claiming a model that outperforms humans at detecting sarcasm is a headline that cuts through decades of AI hype. When something claims to solve the exact limitation every user has personally experienced, sharing becomes inevitable. Add in the immediate integration with Google Search — the world's most-used information product — and the viral math is simple: hundreds of millions of people will encounter this capability before they even know it exists.</p>
+  </div>
+
+  <h2>The Signals</h2>
+  <div class="key-stats">
+    <div class="stat-row"><span class="stat-label">Metric</span><span class="stat-value">7.8k upvotes</span></div>
+    <div class="stat-row"><span class="stat-label">Trend</span><span class="stat-value">+198%</span></div>
+    <div class="stat-row"><span class="stat-label">Signal Score</span><span class="stat-value">86/100</span></div>
+    <div class="stat-row"><span class="stat-label">Source</span><span class="stat-value">Reddit · r/technology</span></div>
+    <div class="stat-row"><span class="stat-label">First Spotted</span><span class="stat-value">17 hours ago</span></div>
+  </div>
+
+  <h2>What we're seeing</h2>
+  <p>The r/technology thread has accumulated 7.8k upvotes over 17 hours with a +198% trend spike — numbers that suggest this isn't just Reddit gaming the algorithm, but genuine broad interest crossing into mainstream tech consciousness. The 97% accuracy claim is grabbing attention, but what really has people talking is the "better than humans" framing. Humans are notoriously bad at detecting sarcasm in text — studies consistently show people misread sarcastic statements 20-30% of the time even in normal conversation, with that number climbing dramatically in written online formats where tone cues are stripped away.</p>
+  <p>Google Research's paper details a model trained on a massive corpus of labeled sarcastic and ironic text, leveraging contextual cues, punctuation patterns, and semantic inversion signals that human readers consciously or subconsciously pick up on. The integration angle is what separates this from a pure research novelty: Google is reportedly already embedding the model into Search result ranking and snippet generation, which means the technology will silently influence what hundreds of millions of people read every day without any explicit announcement. This is AI infrastructure becoming invisible infrastructure.</p>
+  <p>The timing of this release matters. The AI industry has been locked in a capabilities race focused primarily on factual accuracy, reasoning depth, and context length — measurable, benchmarkable dimensions. Sarcasm detection is a different kind of problem: fundamentally social, context-dependent, and deeply rooted in cultural nuance. That Google chose to tackle it — and claims to have cracked it — signals a shift toward AI that understands not just what words mean but what they mean <em>in spite of</em> what they literally say.</p>
+  <p>What's getting less attention but may matter more long-term: the implications for search engine optimization, content moderation, and sentiment analysis. If Search can now reliably detect that a product review is ironic, or that a news headline is sarcastic, the entire ecosystem of text-based social proof gets recalibrated. Brands, creators, and marketers who rely on literal-vs-not-literal ambiguity may find the ground shifting beneath them.</p>
+
+  <div class="ad-placeholder">📢 Advertisement</div>
+  <div class="related-signals">
+    <h3>Related Signals</h3>
+    <ul class="related-list">
+      <li><a href="article-sig-001.html">OpenAI memory upgrade</a> <span>AI · Signal 001</span></li>
+      <li><a href="article-sig-006.html">Mistral Mesmer model</a> <span>AI · Signal 006</span></li>
+      <li><a href="article-sig-007.html">Sam Altman cryptic post</a> <span>AI · Signal 007</span></li>
+    </ul>
+  </div>
+
+  <h2>Who should watch this</h2>
+  <p>Content creators and brand marketers should pay close attention: sarcasm and irony detection in search and social algorithms could change how written content performs and is interpreted at scale. A sarcastic review, an ironic headline, or a tongue-in-cheek promotional post that once relied on readers "getting it" may now be parsed very differently by AI-powered ranking systems. Understanding this shift isn't optional — it's foundational to how communications will need to be crafted in an AI-native content ecosystem.</p>
+  <p>Product managers and UX designers building conversational AI, customer support bots, or social media tools should watch how Google rolls out this capability internally. If Google Search is the first integration surface, assistants and chat products are almost certainly next. The competitive pressure on every other AI assistant provider to match Google's sarcasm comprehension will be immediate — and users will increasingly expect all AI systems to "get" when they're being playful or critical, not just when they're being literal.</p>
+  <p>Researchers and academics in NLP and linguistics have their own reasons to watch: the 97% claim, if it holds up to independent scrutiny, represents a meaningful leap in a task that was considered stubbornly resistant to automation. It also raises immediate questions about what the model has learned that humans haven't formalized — and what that reveals about the nature of sarcasm and irony themselves. For the AI research community, this could be a data point in the larger debate about whether current LLM approaches can truly generalize on sociolinguistic phenomena.</p>
+  <p>Finally, everyday internet users should be quietly aware: the way you write online is now being interpreted by systems that may understand your sarcasm better than the humans you're talking to. That has implications for how we all communicate, howMisinformation and irony interact, and how the written internet continues to evolve as a space where bots and humans co-interpret meaning. This isn't just a research paper — it's a preview of how AI will reshape the most fundamental layer of digital communication: written text.</p>
+
+  <h2>The Bottom Line</h2>
+  <p>Google Research's sarcasm detection model is a signal worth tracking not because of the headline accuracy number, but because of what it represents: AI that's learning to understand what people mean rather than just what they say, deployed at a scale where it will quietly shape how information is read, ranked, and interpreted across the open web. With a 97% accuracy claim, 7.8k Reddit upvotes, and direct integration into Google Search already underway, this isn't theoretical — it's infrastructure arriving in real time. The downstream effects on search, social proof, content creation, and human-AI communication will take years to fully understand, but the direction is clear: the text layer of the internet just got a lot smarter about reading between the lines.</p>
+
+  
+
+</main>
+
+
+<!-- BTWV Ad: Before Footer -->
+<div class="ad-placeholder" style="display:block;width:100%;max-width:728px;height:90px;margin:20px auto;background:#f0f0f0;border:2px dashed #ccc;text-align:center;line-height:90px;font-size:12px;color:#999;" data-slot="3333333333">AD SLOT 3333333333 — PREVIEW</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<footer>
+  <div class="article-wrap" style="max-width:1200px;padding:0 24px;">
+    <p>Updated daily by AI intelligence · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

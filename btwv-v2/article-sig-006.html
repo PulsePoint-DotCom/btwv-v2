@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-9312870448453345">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="...">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://btwv.masonbacotti.com/article-sig-006">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://btwv.masonbacotti.com/article-sig-006">
+  <meta property="og:title" content="New open-source model beats GPT-4 on math benchmarks — Mistral releases Mesmer — Before They Went Viral">
+  <meta property="og:description" content="...">
+  <meta property="og:site_name" content="Before They Went Viral">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="New open-source model beats GPT-4 on math benchmarks — Mistral releases Mesmer">
+  <meta name="twitter:description" content="...">
+  <title>New open-source model beats GPT-4 on math benchmarks — Mistral releases Mesmer — Before They Went Viral</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f5f5;
+      --border: #e0e0e0;
+      --text: #1a1a1a;
+      --text-sec: #666666;
+      --accent: #ff6b35;
+      --green: #16a34a;
+      --yellow: #ca8a04;
+      --red: #dc2626;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo:hover { text-decoration: none; }
+    .logo-icon { color: var(--accent); font-size: 1.3rem; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: var(--text-sec); font-size: 0.9rem; }
+    nav a:hover { color: var(--text); text-decoration: none; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .genre-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .read-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-sec);
+    }
+    .signal-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .signal-pill.exploding { background: var(--red); color: #fff; }
+    .signal-pill.hot { background: var(--accent); color: #fff; }
+    .signal-pill.warming { background: var(--yellow); color: #fff; }
+    .signal-pill.cold { background: var(--text-sec); color: #fff; }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .subheadline {
+      font-size: 1.15rem;
+      color: var(--text-sec);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 40px 0 16px;
+    }
+
+    h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 28px 0 12px;
+    }
+
+    p { margin-bottom: 20px; }
+
+    ul, ol { margin: 0 0 20px 24px; }
+    li { margin-bottom: 8px; }
+
+    .key-stats {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .key-stats h3 { margin-top: 0; }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text-sec); }
+    .stat-value { font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
+
+    .ad-placeholder {
+      background: var(--surface);
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      color: var(--text-sec);
+      font-size: 0.85rem;
+      margin: 40px 0;
+    }
+
+    .why-box {
+      background: linear-gradient(135deg, #fff7f0, #fff);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 10px 10px 0;
+      margin: 32px 0;
+    }
+    .why-box h3 { margin-top: 0; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 32px;
+      color: var(--text-sec);
+      font-size: 0.9rem;
+    }
+    .back-link:hover { color: var(--text); text-decoration: none; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-sec);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--text-sec); }
+    footer a:hover { color: var(--text); }
+  
+    .related-signals { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 40px 0; }
+    .related-signals h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; margin: 0 0 16px; }
+    .related-list { list-style: none; margin: 0; padding: 0; }
+    .related-list li { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .related-list li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .related-list a { font-weight: 500; }
+    .related-list span { display: block; font-size: 0.8rem; color: var(--text-sec); margin-top: 2px; }
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://btwv.masonbacotti.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Signals", "item": "https://btwv.masonbacotti.com/"},
+      {"@type": "ListItem", "position": 3, "name": "Signal 006"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "New open-source model beats GPT-4 on math benchmarks — Mistral releases Mesmer",
+    "url": "https://btwv.masonbacotti.com/article-sig-006",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Before They Went Viral",
+      "url": "https://btwv.masonbacotti.com"
+    }
+  }
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+  <!-- Google Analytics - replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span>Before They Went Viral</span>
+    </a>
+    <nav>
+      <a href="index.html">Signals</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <a href="index.html" class="back-link">← Back to signals</a>
+
+  <div class="article-meta">
+    <span class="genre-badge">AI</span>
+    <span class="read-time">5 min read</span>
+    <span class="signal-pill exploding">Signal 96/100</span>
+  </div>
+
+  <h1>New open-source model beats GPT-4 on math benchmarks — Mistral releases Mesmer</h1>
+  <p class="subheadline">Mistral's new model Mesmer scores 94.2% on the MATH benchmark, surpassing GPT-4o, with open weights that run on consumer hardware — and it's already trending #1 on Hugging Face.</p>
+
+  <hr class="article-divider">
+
+  <div class="why-box">
+    <h3>Why this will go viral</h3>
+    <p>Beating GPT-4 on any benchmark is a headline, but doing it with an open-source model that runs on consumer hardware is the kind of story that generates massive viral spread across AI research communities, tech media, and social platforms. The combination of "open-source beats proprietary AI leader," "math benchmark superiority," and "runs on your own hardware" hits multiple viral triggers simultaneously. With 12k upvotes on Reddit r/artificial and a staggering +445% trend, the signal is exploding across every channel that tracks AI developments. Hugging Face trending #1 confirms the community's immediate validation.</p>
+  </div>
+
+  <h2>The Signals</h2>
+  <div class="key-stats">
+    <div class="stat-row"><span class="stat-label">Metric</span><span class="stat-value">12k upvotes</span></div>
+    <div class="stat-row"><span class="stat-label">Trend</span><span class="stat-value">+445%</span></div>
+    <div class="stat-row"><span class="stat-label">Signal Score</span><span class="stat-value">96/100</span></div>
+    <div class="stat-row"><span class="stat-label">Source</span><span class="stat-value">Reddit r/artificial</span></div>
+    <div class="stat-row"><span class="stat-label">First Spotted</span><span class="stat-value">6 hours ago</span></div>
+  </div>
+
+  <h2>What we're seeing</h2>
+  <p>Mistral has released Mesmer, a new open-source language model that achieves 94.2% on the MATH benchmark — a standard benchmark for mathematical reasoning — surpassing GPT-4o's score on the same test. The announcement is sending shockwaves through the AI community because Mistral has consistently positioned itself as the European champion of open-source AI, and Mesmer represents a concrete, measurable leap in capability that directly challenges the narrative that proprietary models like GPT-4o are untouchable on reasoning tasks.</p>
+  <p>The numbers tell a striking story: 12k upvotes in 6 hours with a +445% trend is one of the strongest viral signals we've tracked. Reddit r/artificial is a technically sophisticated community that doesn't get excited by marketing claims — they respond to benchmark data, open-source availability, and reproducible results. The fact that Mesmer is trending #1 on Hugging Face within hours of announcement confirms that the community is actively downloading, testing, and validating the model rather than just upvoting the announcement.</p>
+  <p>The "runs on consumer hardware" detail is doing significant viral work. Open weights mean anyone can download the model and run it on their own machines — no API costs, no rate limits, no dependency on a proprietary provider. For researchers, developers, and AI enthusiasts who have been watching the OpenAI API pricing and rate limit stories pile up, the idea of a GPT-4o-beating model they can run locally is deeply appealing. This is the open-source dream: frontier-level capability without the proprietary lock-in.</p>
+  <p>The pattern here is consistent with what we've seen in previous moments when open-source models closed the gap with proprietary leaders: Llama 2 matching GPT-3.5, Mistral 7B matching larger models, Mixtral setting new efficiency records. Each time, the viral spread was driven by the same dynamic — the community rallies around proof that open development can compete with closed, well-resourced labs. Mesmer hitting 94.2% on MATH is the most compelling data point in this pattern yet, because math benchmarks are widely considered a proxy for logical reasoning capability — one of the most commercially valuable AI skills.</p>
+
+  <div class="ad-placeholder">📢 Advertisement</div>
+  <div class="related-signals">
+    <h3>Related Signals</h3>
+    <ul class="related-list">
+      <li><a href="article-sig-001.html">ChatGPT memory upgrade</a> <span>AI · Signal 001</span></li>
+      <li><a href="article-sig-007.html">Sam Altman cryptic post</a> <span>AI · Signal 007</span></li>
+      <li><a href="article-sig-017.html">Google sarcasm detector</a> <span>AI · Signal 017</span></li>
+    </ul>
+  </div>
+
+  <h2>Who should watch this</h2>
+  <p>AI researchers and machine learning engineers should watch this for the technical implications. Beating GPT-4o on MATH is a significant benchmark achievement, but the more interesting question is what architectural choices Mistral made to get there and whether the approach is generalizable. Mesmer's release will generate a wave of independent evaluations, fine-tunes, and academic analysis that will tell us whether this is a narrow math specialist or a general reasoning breakthrough.</p>
+  <p>Developers and indie hackers who have been building on the OpenAI API should watch this as a potential inflection point for their architecture decisions. If an open-source model matches or beats GPT-4o on key tasks, the calculus for "build on API vs. self-host" shifts. API convenience has been worth the cost and dependency for many teams — but a locally runnable, open-weights model that matches GPT-4o changes that calculation, especially for high-volume applications where API costs scale with usage.</p>
+  <p>Investors and analysts tracking the AI competitive landscape should watch this as evidence that the open-source vs. proprietary capability gap is continuing to close. Mistral has now demonstrated that it can produce models that compete with the best proprietary labs on specific benchmarks. The broader implication — that the moat around proprietary AI companies may be narrower than their valuations suggest — is significant for anyone modeling the long-term AI market structure.</p>
+
+  <h2>The Bottom Line</h2>
+  <p>Mistral's Mesmer achieving 94.2% on MATH and surpassing GPT-4o is the strongest AI viral signal we've tracked — 12k upvotes, +445% trend, Hugging Face trending #1 — because it combines three of the most powerful viral triggers in the AI space: open-source beating proprietary, concrete benchmark superiority, and consumer-hardware runability. This is the kind of release that reshapes the competitive narrative around frontier AI. Watch for independent benchmarks to confirm or qualify the claim, and watch for the downstream effects on API pricing discussions and enterprise AI architecture decisions.</p>
+
+  
+
+</main>
+
+
+<!-- BTWV Ad: Before Footer -->
+<div class="ad-placeholder" style="display:block;width:100%;max-width:728px;height:90px;margin:20px auto;background:#f0f0f0;border:2px dashed #ccc;text-align:center;line-height:90px;font-size:12px;color:#999;" data-slot="3333333333">AD SLOT 3333333333 — PREVIEW</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<footer>
+  <div class="article-wrap" style="max-width:1200px;padding:0 24px;">
+    <p>Updated daily by AI intelligence · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

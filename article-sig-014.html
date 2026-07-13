@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-9312870448453345">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="...">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://btwv.masonbacotti.com/article-sig-014">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://btwv.masonbacotti.com/article-sig-014">
+  <meta property="og:title" content="Steam's new AI-generated game tags are so accurate it's borderline creepy — Before They Went Viral">
+  <meta property="og:description" content="...">
+  <meta property="og:site_name" content="Before They Went Viral">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Steam's new AI-generated game tags are so accurate it's borderline creepy">
+  <meta name="twitter:description" content="...">
+  <title>Steam's new AI-generated game tags are so accurate it's borderline creepy — Before They Went Viral</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f5f5;
+      --border: #e0e0e0;
+      --text: #1a1a1a;
+      --text-sec: #666666;
+      --accent: #ff6b35;
+      --green: #16a34a;
+      --yellow: #ca8a04;
+      --red: #dc2626;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo:hover { text-decoration: none; }
+    .logo-icon { color: var(--accent); font-size: 1.3rem; }
+    nav { display: flex; gap: 24px; }
+    nav a { color: var(--text-sec); font-size: 0.9rem; }
+    nav a:hover { color: var(--text); text-decoration: none; }
+
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .genre-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .read-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-sec);
+    }
+    .signal-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .signal-pill.exploding { background: var(--red); color: #fff; }
+    .signal-pill.hot { background: var(--accent); color: #fff; }
+    .signal-pill.warming { background: var(--yellow); color: #fff; }
+    .signal-pill.cold { background: var(--text-sec); color: #fff; }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .subheadline {
+      font-size: 1.15rem;
+      color: var(--text-sec);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 40px 0 16px;
+    }
+
+    h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 28px 0 12px;
+    }
+
+    p { margin-bottom: 20px; }
+
+    ul, ol { margin: 0 0 20px 24px; }
+    li { margin-bottom: 8px; }
+
+    .key-stats {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .key-stats h3 { margin-top: 0; }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text-sec); }
+    .stat-value { font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
+
+    .ad-placeholder {
+      background: var(--surface);
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      color: var(--text-sec);
+      font-size: 0.85rem;
+      margin: 40px 0;
+    }
+
+    .why-box {
+      background: linear-gradient(135deg, #fff7f0, #fff);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 10px 10px 0;
+      margin: 32px 0;
+    }
+    .why-box h3 { margin-top: 0; }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 32px;
+      color: var(--text-sec);
+      font-size: 0.9rem;
+    }
+    .back-link:hover { color: var(--text); text-decoration: none; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-sec);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--text-sec); }
+    footer a:hover { color: var(--text); }
+  
+    .related-signals { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 40px 0; }
+    .related-signals h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; margin: 0 0 16px; }
+    .related-list { list-style: none; margin: 0; padding: 0; }
+    .related-list li { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .related-list li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .related-list a { font-weight: 500; }
+    .related-list span { display: block; font-size: 0.8rem; color: var(--text-sec); margin-top: 2px; }
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://btwv.masonbacotti.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Signals", "item": "https://btwv.masonbacotti.com/"},
+      {"@type": "ListItem", "position": 3, "name": "Signal 014"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Steam's new AI-generated game tags are so accurate it's borderline creepy",
+    "url": "https://btwv.masonbacotti.com/article-sig-014",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Before They Went Viral",
+      "url": "https://btwv.masonbacotti.com"
+    }
+  }
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9312870448453345" crossorigin="anonymous"></script>
+  <!-- Google Analytics - replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <span>Before They Went Viral</span>
+    </a>
+    <nav>
+      <a href="index.html">Signals</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <a href="index.html" class="back-link">← Back to signals</a>
+
+  <div class="article-meta">
+    <span class="genre-badge">Gaming</span>
+    <span class="read-time">5 min read</span>
+    <span class="signal-pill hot">Signal 86/100</span>
+  </div>
+
+  <h1>Steam's new AI-generated game tags are so accurate it's borderline creepy</h1>
+  <p class="subheadline">Steam rolled out AI-powered game recommendation tags that predict what you'll like better than any curator. PC gamers are both impressed and unsettled. 8.7k upvotes.</p>
+
+  <hr class="article-divider">
+
+  <div class="why-box">
+    <h3>Why this will go viral</h3>
+    <p>Steam's new AI-generated recommendation tags are striking a nerve because they demonstrate something genuinely new: an algorithm that knows your gaming preferences better than your closest friends — or even yourself. The "borderline creepy" framing in the original post captures a growing discomfort with AI systems that have quietly accumulated enough behavioral data to make eerily accurate predictions. The privacy implications — combined with the fact that this works better than human curators — create the kind of tension that drives viral discussion.</p>
+  </div>
+
+  <h2>The Signals</h2>
+  <div class="key-stats">
+    <div class="stat-row"><span class="stat-label">Metric</span><span class="stat-value">8.7k upvotes</span></div>
+    <div class="stat-row"><span class="stat-label">Trend</span><span class="stat-value">+198%</span></div>
+    <div class="stat-row"><span class="stat-label">Signal Score</span><span class="stat-value">86/100</span></div>
+    <div class="stat-row"><span class="stat-label">Source</span><span class="stat-value">Reddit (r/Steam)</span></div>
+    <div class="stat-row"><span class="stat-label">First Spotted</span><span class="stat-value">14 hours ago</span></div>
+  </div>
+
+  <h2>What we're seeing</h2>
+  <p>Reddit's r/Steam community is buzzing with users discovering Steam's new AI-generated recommendation tags — descriptive labels applied to games that go well beyond traditional genre categories. The system appears to analyze your play history, wishlists, review patterns, and browsing behavior to generate hyper-specific tags that feel almost unnervingly accurate. Threads describing the feature are racking up thousands of upvotes, with most commenters alternating between genuine admiration and existential unease.</p>
+  <p>Steam's data advantage here is nearly insurmountable for competitors. With over 1 billion registered accounts and billions of hours of play data spanning decades, Valve has assembled the most comprehensive dataset of PC gaming behavior on the planet. The AI tag system is effectively a product of that data moat — it can make recommendations that feel psychic because it has watched how millions of players actually behave, not just what they say they like.</p>
+  <p>What's setting this apart from standard recommendation engines is the granularity. Where traditional curators or even Netflix-style algorithms might tag a game as "RPG" or "cozy," Steam's AI is apparently generating tags like "games that feel like a rainy Sunday afternoon" or "satisfying inventory management systems" — descriptors that capture the emotional and tactile experience of playing, not just the genre. Gamers are reporting that these tags frequently describe things they never consciously articulated but immediately recognize as true.</p>
+  <p>The comparison to human curators is where it gets uncomfortable. Steam has long had community curators who flag games with hand-written descriptions, but the AI-generated tags outperform them on accuracy and relevance. This raises uncomfortable questions about the future of human curation in an age where the algorithm simply knows better. For PC gamers who've built their identities around knowing the scene intimately, being out-performed by a model trained on their own behavior is a peculiar kind of humbling.</p>
+
+  <div class="ad-placeholder">📢 Advertisement</div>
+  <div class="related-signals">
+    <h3>Related Signals</h3>
+    <ul class="related-list">
+      <li><a href="article-sig-008.html">Nvidia DLSS 4</a> <span>Gaming · Signal 008</span></li>
+      <li><a href="article-sig-019.html">Nintendo Switch 2 AI upscaling</a> <span>Gaming · Signal 019</span></li>
+      <li><a href="article-sig-024.html">Roblox AI NPCs</a> <span>Gaming · Signal 024</span></li>
+    </ul>
+  </div>
+
+  <h2>Who should watch this</h2>
+  <p>Steam's massive user base — casual and hardcore PC gamers alike — should pay attention because this is a preview of how recommendation systems will work going forward. The days of relying on friend referrals, genre labels, or streamer suggestions may be numbered if an AI can generate more accurate, personalized tags from behavioral data alone. Gamers who care about discovering hidden gems before they blow up will want to watch how this system evolves.</p>
+  <p>Game developers and publishers need to understand that this changes the discovery landscape fundamentally. If Steam's AI can predict what players want with high accuracy, the leverage shifts toward Valve's algorithm — meaning studios may need to rethink how they position and market games. Titles that previously might have been buried under vague genre tags now have the potential to reach precisely the right audience through AI-generated descriptors that cut through noise.</p>
+  <p>Recommendation engine builders and AI researchers should watch this as a case study in behavioral modeling at scale. Steam has created something that feels qualitatively different from traditional collaborative filtering — closer to a model that has internalized the *feeling* of what makes a game right for a specific player. The implications for other content platforms (streaming, music, books, e-commerce) are significant.</p>
+  <p>Privacy advocates have plenty to scrutinize here. For the AI to be this accurate, Valve has had to build an extraordinarily detailed model of individual player behavior — one that users never explicitly consented to in this form. The "creepy" reaction is a social signal that people are becoming aware of just how much platforms can infer about them from seemingly innocuous activity data.</p>
+
+  <h2>The Bottom Line</h2>
+  <p>Steam's AI-generated recommendation tags represent a leap in what recommendation systems can achieve when built on truly massive behavioral data — and the PC gaming community's mix of impressed and unsettled reactions tells you everything about where consumer sentiment is heading on AI personalization. With 8.7k upvotes and a +198% trend spike, the signal is clear: this is resonating. The implications stretch far beyond gaming — any platform that holds behavioral data and deploys AI personalization will face the same "impressive but creepy" tension. The companies that navigate that tension thoughtfully will earn user trust; those that don't will face backlash.</p>
+
+  
+
+</main>
+
+
+<!-- BTWV Ad: Before Footer -->
+<div class="ad-placeholder" style="display:block;width:100%;max-width:728px;height:90px;margin:20px auto;background:#f0f0f0;border:2px dashed #ccc;text-align:center;line-height:90px;font-size:12px;color:#999;" data-slot="3333333333">AD SLOT 3333333333 — PREVIEW</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<footer>
+  <div class="article-wrap" style="max-width:1200px;padding:0 24px;">
+    <p>Updated daily by AI intelligence · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

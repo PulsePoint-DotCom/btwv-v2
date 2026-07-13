@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://btwv.masonbacotti.com/sitemap.xml

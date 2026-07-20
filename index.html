@@ -266,6 +266,16 @@
       margin-left: 4px;
     }
 
+    /* SIGNAL SCORE CHART */
+    .signal-score-chart-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    #signalScoreChart { width: 100%; height: auto; display: block; }
+
     /* SIGNAL GRID */
     .signals-grid {
       display: grid;
@@ -549,6 +559,11 @@
   
 <div class="ad-placeholder" style="display:block;width:100%;max-width:728px;height:90px;margin:20px auto;background:#f0f0f0;border:2px dashed #ccc;text-align:center;line-height:90px;font-size:12px;color:#999;" data-slot="1111111111">AD SLOT 1111111111 — PREVIEW</div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="signal-score-chart-wrap" id="signalScoreChartWrap">
+  <div class="chart-label">📊 Signal Score Trend</div>
+  <canvas id="signalScoreChart" width="700" height="140"></canvas>
+</div>
 
 <div class="signals-grid" id="signalsGrid">
     <!-- Cards injected by JS -->
@@ -1201,8 +1216,82 @@ clearBtn.addEventListener('click', () => {
   renderSignals();
 });
 
+// === Signal Score Trend Chart ===
+function renderSignalChart() {
+  const canvas = document.getElementById('signalScoreChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const sigs = signals.slice(0, 20); // last 20 signals
+
+  const W = canvas.width;
+  const H = canvas.height;
+  const pad = { top: 10, right: 10, bottom: 28, left: 32 };
+  const chartW = W - pad.left - pad.right;
+  const chartH = H - pad.top - pad.bottom;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Grid lines
+  ctx.strokeStyle = '#e0e0e0';
+  ctx.lineWidth = 1;
+  [25, 50, 75, 100].forEach(val => {
+    const y = pad.top + chartH - (val / 100) * chartH;
+    ctx.beginPath();
+    ctx.moveTo(pad.left, y);
+    ctx.lineTo(pad.left + chartW, y);
+    ctx.stroke();
+    ctx.fillStyle = '#999';
+    ctx.font = '9px IBM Plex Mono';
+    ctx.textAlign = 'right';
+    ctx.fillText(val, pad.left - 3, y + 3);
+  });
+
+  // X-axis labels (show every 5th signal)
+  ctx.fillStyle = '#888';
+  ctx.font = '8px IBM Plex Mono';
+  ctx.textAlign = 'center';
+  sigs.forEach((s, i) => {
+    if (i % 5 === 0) {
+      const x = pad.left + (i / (sigs.length - 1)) * chartW;
+      ctx.fillText('sig-' + s.id.replace('sig-', ''), x, H - 6);
+    }
+  });
+
+  // Bars
+  const barW = (chartW / sigs.length) * 0.6;
+  const gap = (chartW / sigs.length) * 0.4;
+
+  sigs.forEach((s, i) => {
+    const x = pad.left + i * (barW + gap) + gap / 2;
+    const barH = Math.round((s.signalScore / 100) * chartH);
+    const y = pad.top + chartH - barH;
+
+    // Color by score range
+    let color = '#ccc';
+    if (s.signalScore >= 90) color = '#ff6b35';
+    else if (s.signalScore >= 80) color = '#ff8c42';
+    else if (s.signalScore >= 70) color = '#f4a261';
+    else if (s.signalScore >= 60) color = '#e9c46a';
+    else color = '#a8dadc';
+
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.roundRect(x, y, barW, barH, [3, 3, 0, 0]);
+    ctx.fill();
+  });
+
+  // Baseline
+  ctx.strokeStyle = '#ddd';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(pad.left, pad.top + chartH);
+  ctx.lineTo(pad.left + chartW, pad.top + chartH);
+  ctx.stroke();
+}
+
 // Init
 renderSignals();
+renderSignalChart();
 </script>
 
 </body>
